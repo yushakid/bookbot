@@ -13,5 +13,22 @@ def num_words(text: str):
             letters[letter] = 1
     return letters
 
+def sort_on(values: dict):
+    return values["count"]
+
+def sorted_letters(letters: dict):
+    values = []
+    for letter, count in letters.items():
+        if letter.isalpha():
+            values.append({"letter": letter, "count": count})
+    values.sort(reverse = True, key = sort_on)
+
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...\n----------- Word Count ---------\nFound 75767 total words\n--------- Character Count -------")
+    for letter in values:
+        print(f"{letter['letter']}: {letter['count']}")
+
 if __name__ == "__main__":
-    print(num_words("holy wow"))
+    letters = num_words("hello holy cow!")
+    sorted_letters(letters)
+

@@ -1,4 +1,4 @@
-from stats import count_words, num_words
+from stats import count_words, num_words, sorted_letters
 
 def get_book_text(filename: str):
     with open(filename, 'r', encoding = "UTF-8") as f:
@@ -7,6 +7,7 @@ def get_book_text(filename: str):
 
 def main():
     text = get_book_text("books/frankenstein.txt")
-    print(num_words(text))
+    letters = num_words(text)
+    sorted_letters(letters)
 
 main()
