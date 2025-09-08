@@ -1,13 +1,15 @@
-import os
-
 def get_book_text(filename: str):
-    print("Reading file at:", os.path.abspath(filename))
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding = "UTF-8") as f:
         text = f.read()
-    print("Length of text:", len(text))
     return text
 
+def count_words(text: str):
+    words = text.split(" ")
+    count = len(words)
+    return count
+
 def main():
-    print(get_book_text("books/frankenstein.txt")[:500])  # first 500 chars
+    text = get_book_text("books/frankenstein.txt")
+    print(count_words(text))
 
 main()
