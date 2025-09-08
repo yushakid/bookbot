@@ -24,7 +24,7 @@ def sorted_letters(letters: dict):
     values.sort(reverse = True, key = sort_on)
 
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...\n----------- Word Count ---------\nFound 75767 total words\n--------- Character Count -------")
+    print("Analyzing book\n----------- Word Count ---------\nFound 75767 total words\n--------- Character Count -------")
     for letter in values:
         print(f"{letter['letter']}: {letter['count']}")
 
